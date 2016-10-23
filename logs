@@ -1,0 +1,101 @@
+2016-10-23T13:24:22.842531+00:00 app[web.1]: [2016-10-23 13:24:22 +0000] [8] [ERROR] Exception in worker process
+2016-10-23T13:24:22.842535+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+2016-10-23T13:24:22.842534+00:00 app[web.1]: Traceback (most recent call last):
+2016-10-23T13:24:22.842536+00:00 app[web.1]:     worker.init_process()
+2016-10-23T13:24:22.842537+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/workers/base.py", line 126, in init_process
+2016-10-23T13:24:22.842537+00:00 app[web.1]:     self.load_wsgi()
+2016-10-23T13:24:22.842538+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2016-10-23T13:24:22.842538+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+2016-10-23T13:24:22.842539+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2016-10-23T13:24:22.842539+00:00 app[web.1]:     self.callable = self.load()
+2016-10-23T13:24:22.842540+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2016-10-23T13:24:22.842541+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2016-10-23T13:24:22.842541+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2016-10-23T13:24:22.842540+00:00 app[web.1]:     return self.load_wsgiapp()
+2016-10-23T13:24:22.842541+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/util.py", line 357, in import_app
+2016-10-23T13:24:22.842542+00:00 app[web.1]:     __import__(module)
+2016-10-23T13:24:22.842542+00:00 app[web.1]:   File "/app/run.py", line 3, in <module>
+2016-10-23T13:24:22.842542+00:00 app[web.1]:     app.run(debug=True, use_reloader=True)
+2016-10-23T13:24:22.842543+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/flask/app.py", line 843, in run
+2016-10-23T13:24:22.842544+00:00 app[web.1]:     s.bind((hostname, port))
+2016-10-23T13:24:22.843117+00:00 app[web.1]: [2016-10-23 13:24:22 +0000] [8] [INFO] Worker exiting (pid: 8)
+2016-10-23T13:24:22.842543+00:00 app[web.1]:     run_simple(host, port, self, **options)
+2016-10-23T13:24:22.842544+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/werkzeug/serving.py", line 677, in run_simple
+2016-10-23T13:24:22.842547+00:00 app[web.1]: OSError: [Errno 98] Address already in use
+2016-10-23T13:24:22.843119+00:00 app[web.1]:  * Restarting with stat
+2016-10-23T13:24:22.910225+00:00 app[web.1]: [2016-10-23 13:24:22 +0000] [7] [INFO] Worker exiting (pid: 7)
+2016-10-23T13:24:22.843644+00:00 app[web.1]: sys:1: ResourceWarning: unclosed <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 0)>
+2016-10-23T13:24:22.911226+00:00 app[web.1]: sys:1: ResourceWarning: unclosed <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000)>
+2016-10-23T13:24:22.912017+00:00 app[web.1]: sys:1: ResourceWarning: unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('0.0.0.0', 41550)>
+2016-10-23T13:24:23.008546+00:00 app[web.1]: [2016-10-23 13:24:23 +0000] [3] [INFO] Shutting down: Master
+2016-10-23T13:24:23.008635+00:00 app[web.1]: [2016-10-23 13:24:23 +0000] [3] [INFO] Reason: Worker failed to boot.
+2016-10-23T13:24:23.103198+00:00 heroku[web.1]: Process exited with status 3
+2016-10-23T13:24:23.117643+00:00 heroku[web.1]: State changed from up to crashed
+2016-10-23T13:24:34.347483+00:00 heroku[api]: Deploy 155df04 by subil1407@gmail.com
+2016-10-23T13:24:34.347522+00:00 heroku[api]: Release v6 created by subil1407@gmail.com
+2016-10-23T13:24:34.521483+00:00 heroku[slug-compiler]: Slug compilation started
+2016-10-23T13:24:34.521493+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-10-23T13:24:34.598066+00:00 heroku[web.1]: State changed from crashed to starting
+2016-10-23T13:24:39.088871+00:00 heroku[web.1]: Starting process with command `gunicorn run:app --log-file -`
+2016-10-23T13:24:42.763177+00:00 heroku[web.1]: State changed from starting to up
+2016-10-23T13:24:42.563613+00:00 app[web.1]: [2016-10-23 13:24:42 +0000] [3] [INFO] Listening at: http://0.0.0.0:25969 (3)
+2016-10-23T13:24:42.564157+00:00 app[web.1]: [2016-10-23 13:24:42 +0000] [3] [INFO] Using worker: sync
+2016-10-23T13:24:42.559892+00:00 app[web.1]: [2016-10-23 13:24:42 +0000] [3] [INFO] Starting gunicorn 19.6.0
+2016-10-23T13:24:42.576886+00:00 app[web.1]: [2016-10-23 13:24:42 +0000] [7] [INFO] Booting worker with pid: 7
+2016-10-23T13:24:42.667668+00:00 app[web.1]: [2016-10-23 13:24:42 +0000] [8] [INFO] Booting worker with pid: 8
+2016-10-23T13:24:48.475841+00:00 app[web.1]: [2016-10-23 13:24:48 +0000] [8] [ERROR] Exception in worker process
+2016-10-23T13:24:48.475851+00:00 app[web.1]: Traceback (most recent call last):
+2016-10-23T13:24:48.475855+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+2016-10-23T13:24:48.475856+00:00 app[web.1]:     worker.init_process()
+2016-10-23T13:24:48.475857+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/workers/base.py", line 126, in init_process
+2016-10-23T13:24:48.475858+00:00 app[web.1]:     self.load_wsgi()
+2016-10-23T13:24:48.475859+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+2016-10-23T13:24:48.475859+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2016-10-23T13:24:48.475861+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2016-10-23T13:24:48.475861+00:00 app[web.1]:     self.callable = self.load()
+2016-10-23T13:24:48.475862+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2016-10-23T13:24:48.475863+00:00 app[web.1]:     return self.load_wsgiapp()
+2016-10-23T13:24:48.475863+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2016-10-23T13:24:48.475864+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2016-10-23T13:24:48.475865+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/util.py", line 357, in import_app
+2016-10-23T13:24:48.475865+00:00 app[web.1]:     __import__(module)
+2016-10-23T13:24:48.475866+00:00 app[web.1]:   File "/app/run.py", line 7, in <module>
+2016-10-23T13:24:48.475866+00:00 app[web.1]:     app.run(debug=True, use_reloader=True, port=port)
+2016-10-23T13:24:48.475867+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/flask/app.py", line 843, in run
+2016-10-23T13:24:48.475868+00:00 app[web.1]:     run_simple(host, port, self, **options)
+2016-10-23T13:24:48.475868+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/werkzeug/serving.py", line 677, in run_simple
+2016-10-23T13:24:48.475869+00:00 app[web.1]:     s.bind((hostname, port))
+2016-10-23T13:24:48.486408+00:00 app[web.1]: [2016-10-23 13:24:48 +0000] [8] [INFO] Worker exiting (pid: 8)
+2016-10-23T13:24:48.488338+00:00 app[web.1]: sys:1: ResourceWarning: unclosed <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 0)>
+2016-10-23T13:24:48.484357+00:00 app[web.1]: TypeError: an integer is required (got type str)
+2016-10-23T13:24:48.494420+00:00 app[web.1]: [2016-10-23 13:24:48 +0000] [7] [ERROR] Exception in worker process
+2016-10-23T13:24:48.494425+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+2016-10-23T13:24:48.494424+00:00 app[web.1]: Traceback (most recent call last):
+2016-10-23T13:24:48.494426+00:00 app[web.1]:     worker.init_process()
+2016-10-23T13:24:48.494427+00:00 app[web.1]:     self.load_wsgi()
+2016-10-23T13:24:48.494428+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+2016-10-23T13:24:48.494428+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2016-10-23T13:24:48.494429+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2016-10-23T13:24:48.494430+00:00 app[web.1]:     self.callable = self.load()
+2016-10-23T13:24:48.494427+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/workers/base.py", line 126, in init_process
+2016-10-23T13:24:48.494431+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2016-10-23T13:24:48.494432+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+2016-10-23T13:24:48.494431+00:00 app[web.1]:     return self.load_wsgiapp()
+2016-10-23T13:24:48.494432+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2016-10-23T13:24:48.494433+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/gunicorn/util.py", line 357, in import_app
+2016-10-23T13:24:48.494433+00:00 app[web.1]:     __import__(module)
+2016-10-23T13:24:48.494434+00:00 app[web.1]:   File "/app/run.py", line 7, in <module>
+2016-10-23T13:24:48.494435+00:00 app[web.1]:     app.run(debug=True, use_reloader=True, port=port)
+2016-10-23T13:24:48.494435+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/flask/app.py", line 843, in run
+2016-10-23T13:24:48.494437+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.5/site-packages/werkzeug/serving.py", line 677, in run_simple
+2016-10-23T13:24:48.494436+00:00 app[web.1]:     run_simple(host, port, self, **options)
+2016-10-23T13:24:48.494437+00:00 app[web.1]:     s.bind((hostname, port))
+2016-10-23T13:24:48.494443+00:00 app[web.1]: TypeError: an integer is required (got type str)
+2016-10-23T13:24:48.495103+00:00 app[web.1]: [2016-10-23 13:24:48 +0000] [7] [INFO] Worker exiting (pid: 7)
+2016-10-23T13:24:48.495615+00:00 app[web.1]: sys:1: ResourceWarning: unclosed <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 0)>
+2016-10-23T13:24:48.496136+00:00 app[web.1]: sys:1: ResourceWarning: unclosed <socket.socket fd=6, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('0.0.0.0', 25969)>
+2016-10-23T13:24:48.958228+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/" host=daily-reddit.herokuapp.com request_id=062516fc-a5ac-492b-8405-4d8e3a6fe525 fwd="117.216.137.226" dyno=web.1 connect=0ms service=4273ms status=503 bytes=0
+2016-10-23T13:24:49.026411+00:00 app[web.1]: [2016-10-23 13:24:49 +0000] [3] [INFO] Shutting down: Master
+2016-10-23T13:24:49.026953+00:00 app[web.1]: [2016-10-23 13:24:49 +0000] [3] [INFO] Reason: Worker failed to boot.
+2016-10-23T13:24:49.288798+00:00 heroku[web.1]: Process exited with status 3
+2016-10-23T13:24:49.305623+00:00 heroku[web.1]: State changed from up to crashed
