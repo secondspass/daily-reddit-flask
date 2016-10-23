@@ -13,7 +13,7 @@ color: #47cef7;
 
 @media only screen and (max-device-width: 480px) {
 body{
-margin-left:0px;
-margin-right:0px;
+margin-left:10px;
+margin-right:10px;
 background-color: #000;
 }
