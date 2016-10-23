@@ -1,3 +1,7 @@
 #!/usr/bin/env python3
 from app import app
-app.run(debug=True, use_reloader=True)
+import os
+
+
+port = os.environ.get('PORT', 6312)
+app.run(debug=True, use_reloader=True, port=port)
