@@ -10,3 +10,9 @@ color: #ccc7c1;
 a {
 color: #47cef7;
 }
+
+@media only screen and (max-device-width: 480px) {
+body{
+width: device-width;
+background-color: #000;
+}
