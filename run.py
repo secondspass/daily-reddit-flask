@@ -3,5 +3,5 @@ from app import app
 import os
 
 
-port = int(os.environ.get('PORT', 6312))
-app.run(debug=True, use_reloader=True, port=port)
+port = int(os.environ.get('PORT', 5000))
+app.run(debug=True, host='0.0.0.0', port=port)
