@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta name="viewport" http-equiv="content-type" content="text/html; charset=UTF-8; width=device-width">
+    <title>Daily Reddit</title>
+    <link href="{{ url_for('static',filename='screen.css') }}" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="story">
+    <h1>Choose a Subreddit</h1>
+    {% for subreddit in subredditlist %}
+    <h4><a href="/{{ subreddit.name }}">{{ subreddit.title }}</a></h6>
+    {% endfor %}
+  </body>
+</html>
