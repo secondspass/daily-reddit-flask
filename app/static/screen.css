@@ -11,7 +11,7 @@ a {
 color: #47cef7;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 610px) {
 body{
 margin-left:10px;
 margin-right:10px;
