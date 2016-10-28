@@ -6,8 +6,8 @@ from . import jokes
 from app import app
 
 subreddit_list = [
-    {'name': 'writingprompts', 'title': 'Writing Prompts', 'function': writingprompts.get_writingprompt()},
-    {'name': 'jokes', 'title': 'Jokes', 'function': jokes.get_joke()}
+    {'name': 'writingprompts', 'title': 'Writing Prompts', 'function': writingprompts.get_writingprompt},
+    {'name': 'jokes', 'title': 'Jokes', 'function': jokes.get_joke}
 ]
 
 
@@ -22,7 +22,7 @@ def index():
 def todays_post(post):
     for subreddit in subreddit_list:
         if post == subreddit['name']:
-            post_title, content, author, permalink = subreddit['function']
+            post_title, content, author, permalink = subreddit['function']()
             content = insert_linebreaks(content)
             return render_template('post.html',
                                    subredditname=subreddit['title'],
