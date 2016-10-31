@@ -11,6 +11,7 @@ subreddit_list = [
     {'name': 'jokes', 'title': 'Jokes', 'function': self_posts.get_self_post},
     {'name': 'meanjokes', 'title': 'Mean Jokes', 'function': self_posts.get_self_post},
     {'name': 'fantheories', 'title': 'Fan Theories', 'function': self_posts.get_self_post},
+    {'name': 'letsnotmeet', 'title': 'Lets Not Meet', 'function': self_posts.get_self_post},
     {'name': 'talesfromtechsupport', 'title': 'Tales From Tech Support', 'function': self_posts.get_self_post},
     {'name': 'talesfromretail', 'title': 'Tales From Retail', 'function': self_posts.get_self_post},
     {'name': 'talesfromsecurity', 'title': 'Tales From Security', 'function': self_posts.get_self_post},
