@@ -7,5 +7,13 @@ Come and take a look: http://daily-reddit.herokuapp.com/
 
 ## Subreddits available
 
-writingprompts
-jokes
+* Writing Prompts
+* No Sleep
+* Jokes
+* Mean Jokes
+* Fan Theories
+* Tales From Tech Support
+* Tales From Retail
+* Tales From Security
+* Tales From Your Server
+* Tales From the Pharmacy
