@@ -8,10 +8,10 @@ from app import app
 subreddit_list = [
     {'name': 'writingprompts', 'title': 'Writing Prompts', 'function': writingprompts.get_writingprompt},
     {'name': 'nosleep', 'title': 'No Sleep', 'function': self_posts.get_self_post},
+    {'name': 'letsnotmeet', 'title': 'Lets Not Meet', 'function': self_posts.get_self_post},
     {'name': 'jokes', 'title': 'Jokes', 'function': self_posts.get_self_post},
     {'name': 'meanjokes', 'title': 'Mean Jokes', 'function': self_posts.get_self_post},
     {'name': 'fantheories', 'title': 'Fan Theories', 'function': self_posts.get_self_post},
-    {'name': 'letsnotmeet', 'title': 'Lets Not Meet', 'function': self_posts.get_self_post},
     {'name': 'talesfromtechsupport', 'title': 'Tales From Tech Support', 'function': self_posts.get_self_post},
     {'name': 'talesfromretail', 'title': 'Tales From Retail', 'function': self_posts.get_self_post},
     {'name': 'talesfromsecurity', 'title': 'Tales From Security', 'function': self_posts.get_self_post},
@@ -27,11 +27,11 @@ def index():
                            )
 
 
-@app.route('/<post>/')
-def todays_post(post):
+@app.route('/<subreddit_name>/')
+def todays_post(subreddit_name):
     for subreddit in subreddit_list:
-        if post == subreddit['name']:
-            post_title, content, author, permalink = subreddit['function'](post)
+        if subreddit_name == subreddit['name']:
+            post_title, content, author, permalink = subreddit['function'](subreddit_name)
             content = insert_linebreaks(content)
             return render_template('post.html',
                                    subredditname=subreddit['title'],

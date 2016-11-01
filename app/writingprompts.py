@@ -1,50 +1,32 @@
 #!/usr/bin/env python3
 
-# Script to download the highest response from the
+# Script to download the highest rated response from the
 # highest rated writing prompt on reddit's r/writingprompts
 # subreddit in the past 24 hours
 
-import praw
+from . import top_comments
 
 
-def getItems():
-    most_upvotes = 0
-    top_comment = None
-    user_agent = "Daily top writingprompts by noirdragon"
-    r = praw.Reddit(user_agent)
-    subreddit = r.get_subreddit("writingprompts")
-    writingprompt = subreddit.get_top_from_day(limit=1)
-    for submission in writingprompt:
-        for comment in submission.comments:
-            try:
-                if comment.is_root:
-                    if comment.ups > most_upvotes:
-                        most_upvotes = comment.ups
-                        top_comment = comment
-            except AttributeError:
-                continue
-        return (submission, top_comment)
-
-
-def get_writingprompt():
-    '''Returns the title, content and author of /r/writingprompts top
-    submission today
+def get_writingprompt(subreddit):
+    '''Returns the title, content and author of the top response of the top
+    post and the link to the top post in /r/writingprompts of today.
     '''
 
-    submission, top_comment = getItems()
-    title = submission.title
+    post, top_comment = top_comments.getItems(subreddit)
+    title = post.title
     author = top_comment.author
-    permalink = submission.permalink
+    permalink = post.permalink
 
     if title.find('[PI]') > -1:
-        # If the submission is a [PI] submission
-        content = submission.selftext
+        # If the post is a [PI] submission
+        content = post.selftext
+        author = post.author
 
     elif title.find('[IP]') > -1:
-        # If the submission is an Image Prompt
-        link_start = submission.selftext.find('(') + 1
-        link_end = submission.selftext.find(')')
-        link = submission.selftext[link_start:link_end]
+        # If the post is an Image Prompt
+        link_start = post.selftext.find('(') + 1
+        link_end = post.selftext.find(')')
+        link = post.selftext[link_start:link_end]
         content = '<img src=' + link + '>Image </img>' + '\n\n' + top_comment.body
 
     else:
